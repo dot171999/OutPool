@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:sothree="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sliding_layout"
+    tools:context=".LoginActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    sothree:umanoPanelHeight="0dp"
+    sothree:umanoShadowHeight="0dp"
+    sothree:umanoOverlay="true"
+    sothree:umanoClipPanel="true"
+    sothree:umanoFadeColor="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/roboto"
+                android:text="@string/activity_login_welcome"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="36sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-11dp"
+                android:fontFamily="@font/roboto"
+                android:text="@string/app_name"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="36sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <RelativeLayout
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:gravity="center">
+
+                        <ImageButton
+                            android:id="@+id/login_button_g1"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            tools:visibility="visible"
+                            android:layout_centerInParent="true"
+                            android:visibility="gone"
+                            android:background="@drawable/activity_login_circle_blink_bg"
+                            android:onClick="setFbLoginButton" />
+                        <ImageButton
+                            android:id="@+id/login_button_g"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/circle_google"
+                            android:layout_centerInParent="true"
+                            android:onClick="setGLoginButton"
+                            />
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:gravity="center">
+                        <ImageButton
+                            android:id="@+id/login_button_fb1"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:visibility="gone"
+                            tools:visibility="visible"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/activity_login_circle_blink_bg_fb"
+                            android:onClick="setFbLoginButton" />
+                        <ImageButton
+                            android:id="@+id/login_button_fb"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/circle_fb"
+                            android:layout_centerInParent="true"
+                            android:onClick="setFbLoginButton" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:id="@+id/btn"
+                android:onClick="aboutBtnOnPress"
+                android:text="@string/activity_login_about"
+                android:textAllCaps="false"
+                android:background="@drawable/activity_login_about_btn"
+                android:fontFamily="@font/roboto"
+                android:textColor="@color/light_bg_dark_secondary_text"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <include layout="@layout/activity_login_slide_up_pull"/>
+
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>

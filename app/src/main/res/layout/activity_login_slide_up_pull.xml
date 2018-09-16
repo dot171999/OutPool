@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_gravity="center"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center|top"
+    android:id="@+id/pull"
+    tools:context=".LoginActivity"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="5dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="40dp"
+                android:fontFamily="@font/roboto"
+                android:text="@string/activity_login_pull_about"
+                android:textColor="@color/light_bg_dark_secondary_text"
+                android:textAllCaps="false"
+                android:textAlignment="center" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="200dp"
+        android:layout_width="match_parent"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="5dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="40dp"
+                android:fontFamily="@font/roboto"
+                android:text="@string/activity_login_pull_contact_developers"
+                android:textColor="@color/light_bg_dark_secondary_text"
+                android:textAllCaps="false"
+                android:textAlignment="center" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

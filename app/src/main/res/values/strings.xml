@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">OutPool</string>
+    <string name="facebook_app_id">2207478199273782</string>
+    <string name="fb_login_protocol_scheme">fb2207478199273782</string>
+    <string name="activity_login_welcome">Welcome to</string>
+    <string name="activity_login_pull_about">About OutPool</string>
+    <string name="activity_login_pull_contact_developers">Contact Developers</string>
+    <string name="activity_login_about"><u>About</u></string>
+    <string name="activity_main_navigation_toggle_open">Open</string>
+    <string name="activity_main_navigation_toggle_close">Close</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

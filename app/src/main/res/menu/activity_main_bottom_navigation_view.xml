@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/tab1"
+        android:title="Traffic"
+        android:icon="@drawable/ic_directions_walk_white_24dp"
+        />
+
+    <item
+        android:id="@+id/tab2"
+        android:title="Add"
+        android:icon="@drawable/ic_add_location_white_24dp"/>
+
+    <item
+        android:id="@+id/tab3"
+        android:title="Pool"
+        android:icon="@drawable/ic_group_white_24dp"/>
+</menu>
