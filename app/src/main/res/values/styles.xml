@@ -18,10 +18,18 @@
         <item name="colorControlHighlight">@color/orange_900</item>
     </style>
 
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="ListItemPopup" parent="@android:style/Theme.Dialog">
+        <item name="android:windowAnimationStyle">@style/ListItemPopupAnim</item>
+    </style>
+    <style name="ListItemPopupAnim">
+        <item name="android:windowEnterAnimation">@anim/animation</item>
+        <item name="android:windowExitAnimation">@anim/animation</item>
+    </style>
 
 </resources>
