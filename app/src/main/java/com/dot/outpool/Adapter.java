@@ -2,9 +2,13 @@ package com.dot.outpool;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.text.Layout;
+import android.transition.Transition;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,8 +36,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        ListItem listItem=listItems.get(position);
+    public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
+        final ListItem listItem=listItems.get(position);
 
         holder.textViewHead.setText(listItem.getHead());
         holder.textViewDesc.setText(listItem.getDesc());
@@ -41,8 +45,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
         holder.listItemLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Dialog dialog= new Dialog(context);
+                Dialog dialog= new Dialog(context,R.style.PauseDialog);
                 dialog.setContentView(R.layout.list_item_popup);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.getWindow().setGravity(Gravity.BOTTOM);
+                TextView textPopup=dialog.findViewById(R.id.popup_text);
+                textPopup.setText(listItem.getHead()+"  to  "+listItems.get(position+1).getHead());
                 dialog.show();
             }
         });
@@ -57,6 +65,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
         public TextView textViewHead;
         public TextView textViewDesc;
+
         public LinearLayout listItemLayout;
 
         public ViewHolder(View itemView) {

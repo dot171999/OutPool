@@ -17,6 +17,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -40,8 +41,10 @@ import java.net.URL;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
     FragmentManager fm=getFragmentManager();
     static int fragmentName;
+    DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +58,7 @@ public class MainActivity extends AppCompatActivity
         ActionBar actionbar = getSupportActionBar();
         actionbar.setDisplayShowTitleEnabled(false);
 
-        DrawerLayout drawerLayout=findViewById(R.id.drawer_layout);
+        drawerLayout=findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle=new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.activity_main_navigation_toggle_open,R.string.activity_main_navigation_toggle_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
@@ -64,7 +67,11 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         BottomNavigationView navigation = findViewById(R.id.navigation);
+        BottomNavigationViewHelper.removeShiftMode(navigation); //disable animation for items > 3
+
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+
 
         if(isNetworkAvailable(this))
         {
@@ -129,6 +136,9 @@ public class MainActivity extends AppCompatActivity
                 case R.id.tab3:
                     fragmentThree();
                     return true;
+                case R.id.tab4:
+                    fragmentFour();
+                    return true;
             }
             return false;
         }
@@ -154,6 +164,14 @@ public class MainActivity extends AppCompatActivity
         fragmentName=3;
         FragmentTransaction ft =fm.beginTransaction();
         Fragment fragment=new FragmentThree();
+        ft.replace(R.id.frame,fragment);
+        ft.commit();
+    }
+
+    public void fragmentFour() {
+        fragmentName=4;
+        FragmentTransaction ft =fm.beginTransaction();
+        Fragment fragment=new FragmentFour();
         ft.replace(R.id.frame,fragment);
         ft.commit();
     }
@@ -194,10 +212,16 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        if(fragmentName==2 || fragmentName==3)
+        if(fragmentName==2 || fragmentName==3 || fragmentName==4)
         {
             BottomNavigationView navigation = findViewById(R.id.navigation);
             navigation.setSelectedItemId(R.id.tab1);
+            return;
+        }
+
+        if(drawerLayout.isDrawerOpen(Gravity.START))
+        {
+            drawerLayout.closeDrawer(Gravity.START);
             return;
         }
         super.onBackPressed();

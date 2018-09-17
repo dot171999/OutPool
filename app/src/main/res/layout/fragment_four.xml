@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FragmentThree"
-    android:id="@+id/fragment3">
+    tools:context=".FragmentFour"
+    android:id="@+id/fragment4">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="frag 3" />
+        android:text="frAG 4" />
 
 </FrameLayout>

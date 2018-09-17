@@ -2,17 +2,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/tab1"
-        android:title="Traffic"
+        android:title="@string/tab1"
         android:icon="@drawable/ic_directions_walk_white_24dp"
         />
 
     <item
         android:id="@+id/tab2"
-        android:title="Add"
+        android:title="@string/tab2"
         android:icon="@drawable/ic_add_location_white_24dp"/>
 
     <item
         android:id="@+id/tab3"
-        android:title="Pool"
+        android:title="@string/tab3"
         android:icon="@drawable/ic_group_white_24dp"/>
+    <item
+        android:id="@+id/tab4"
+        android:title="@string/tab4"
+        android:icon="@drawable/ic_rss_feed_white_24dp"/>
 </menu>

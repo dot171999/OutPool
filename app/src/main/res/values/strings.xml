@@ -8,6 +8,10 @@
     <string name="activity_login_about"><u>About</u></string>
     <string name="activity_main_navigation_toggle_open">Open</string>
     <string name="activity_main_navigation_toggle_close">Close</string>
+    <string name="tab1">Traffic</string>
+    <string name="tab2">Add</string>
+    <string name="tab3">Pool</string>
+    <string name="tab4">All</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
